@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+    ViewData["Title"] = "Accueil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-3">
+    <div class="text-center mb-3">
+        <h1 class="display-6 fw-bold text-primary">Bienvenue sur Identis CM / Welcome to Identis CM</h1>
+        <p class="lead fs-5 text-secondary">Cette application permet d'identifiez, enregistrez et gérez les différentes cartes nationales des citoyens Camerounais en toute simplicité.</p>
+        
+    </div>
+
+    <div class="row justify-content-center g-4 mt-2">
+
+        <div class="col-md-5">
+            <div class="card border-0 shadow-lg h-100 transition-hover">
+                <div class="card-body p-5 text-center">
+                    <div class="mb-4">
+                        <i class="bi bi-person-plus-fill text-primary" style="font-size: 4rem;"></i>
+                    </div>
+                    <h2 class="h3 card-title fw-bold">Enregistrement</h2>
+                    <p class="card-text text-muted">Ajouter un nouveau citoyen dans la base de données avec ces informations et sa photo.</p>
+                    <a asp-controller="ManageCNI" asp-action="Create" class="btn btn-primary btn-lg w-100 mt-3 shadow-sm py-3 fw-bold">
+                        CRÉER UNE CNI
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card border-0 shadow-lg h-100 transition-hover">
+                <div class="card-body p-5 text-center">
+                    <div class="mb-4">
+                        <i class="bi bi-collection-fill text-success" style="font-size: 4rem;"></i>
+                    </div>
+                    <h2 class="h3 card-title fw-bold">Administration</h2>
+                    <p class="card-text text-muted">Consulter la liste, modifier les informations ou supprimer des enregistrements.</p>
+                    <a asp-controller="ManageCNI" asp-action="Index" class="btn btn-success btn-lg w-100 mt-3 shadow-sm py-3 fw-bold">
+                        GÉRER LES CNI
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .transition-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .transition-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+        }
+</style>
