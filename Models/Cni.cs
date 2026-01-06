@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace CNIWebApp.Models
 {
-    public class Cni : InterfaceCNI
+    public class Cni
     {
         // La clé primaire (auto-incrémentée par MySQL)
         [Key]
@@ -112,16 +112,5 @@ namespace CNIWebApp.Models
         [Display(Name = "Photo d'identité")]
         public string? Image { get; set; }
 
-        public object ListInfo()
-        {
-            Cni citoyen = this;
-
-            return new
-            {
-                Nom = citoyen.Nom,
-                Prenom = citoyen.Prenom,
-                Num_cni = citoyen.Num_cni
-            };
-        }
     }
 }

@@ -6,7 +6,13 @@ namespace CNIWebApp.Models
 {
     public interface InterfaceCNI
     {
-        // Cette fonction sera implémentée pour lister mes CNI
-        Object ListInfo();
+        // 1. Retourne les informations simplifiées pour l'API
+        List<ApiCni> ListInfo();
+
+        // 2. Calcule la validité (différent selon le type de carte)
+        bool IsValid();
+
+        // 3. Formate le numéro de série selon les standards du pays
+        string FormatSerialNumber();
     }
 }

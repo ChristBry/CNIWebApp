@@ -24,7 +24,14 @@ namespace CNIWebApp.Controllers
             {
                 var citoyens = await _context.cni_card.ToListAsync();
 
-                var result = citoyens.Select(c => c.ListInfo());
+                var result = citoyens.Select(c => new ApiCni
+                {
+                    Nom = c.Nom,
+                    Prenom = c.Prenom,
+                    Num_cni = c.Num_cni
+                })
+                .SelectMany(api => api.ListInfo())
+                .ToList();
 
                 return Ok(result);
             }
